@@ -10,21 +10,34 @@
           null,
           null,
           1,
-          1,
+          0,
           null,
           null,
           1,
-          1,
+          0,
           null,
           null,
           1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/tylerporter/Turing/mod_1/classwork/tv_network_2001/lib/show.rb": {
+        "lines": [
+          1,
           1,
           null,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1581437447
+    "timestamp": 1581438069
   }
 }
