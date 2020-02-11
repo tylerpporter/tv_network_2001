@@ -47,9 +47,9 @@ class NetworkTest < Minitest::Test
     assert_equal Hash, @nbc.actors_by_show.class
     assert_equal Show, @nbc.actors_by_show.keys[0].class
 
-    expected = @nbc.actors_by_show.values.any? {|values| values == ["Amy Poehler", "Nick Offerman"]}
+    actual = @nbc.actors_by_show.values.any? {|values| values == ["Amy Poehler", "Nick Offerman"]}
 
-    assert expected
+    assert actual
   end
 
 end
