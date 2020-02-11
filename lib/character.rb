@@ -13,7 +13,7 @@ class Character
   end
 
   def salary
-    @character_info[:salary]
+    @character_info[:salary].to_i
   end
 
 end
