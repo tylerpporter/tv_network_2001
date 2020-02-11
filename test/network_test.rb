@@ -19,7 +19,15 @@ class NetworkTest < Minitest::Test
 
     assert_instance_of Network, @nbc
     assert_equal "NBC", @nbc.name
-    assert_equal [], @nbc.shows 
+    assert_equal [], @nbc.shows
+  end
+
+  def test_it_can_add_shows
+    @nbc.add_show(@knight_rider)
+    @nbc.add_show(@parks_and_rec)
+
+    assert_equal 2, @nbc.shows.size
+    assert_equal Show, @nbc.shows[0].class
   end
 
 end
