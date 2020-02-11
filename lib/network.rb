@@ -21,4 +21,10 @@ class Network
     end
     main_characters
   end
+
+  def actors_by_show
+    by_show = {}
+    @shows.each {|show| by_show[show] = show.actors}
+    by_show
+  end
 end

@@ -39,9 +39,15 @@ class NetworkTest < Minitest::Test
   end
 
   def test_it_can_return_actors_by_show
-    skip
+    @nbc.add_show(@knight_rider)
+    @nbc.add_show(@parks_and_rec)
+
     assert_equal Hash, @nbc.actors_by_show.class
     assert_equal Show, @nbc.actors_by_show.keys[0].class
+
+    expected = @nbc.actors_by_show.values.any? {|values| values == ["Amy Poehler", "Nick Offerman"]}
+
+    assert expected  
   end
 
 
