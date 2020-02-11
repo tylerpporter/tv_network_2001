@@ -15,4 +15,8 @@ class Show
     @characters.max_by {|character| character.salary}.actor
   end
 
+  def actors
+    @characters.map {|character| character.actor}
+  end
+
 end
