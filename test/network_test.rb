@@ -13,6 +13,8 @@ class NetworkTest < Minitest::Test
     @leslie_knope = Character.new({name: "Leslie Knope", actor: "Amy Poehler", salary: 2_000_000})
     @ron_swanson = Character.new({name: "Ron Swanson", actor: "Nick Offerman", salary: 1_400_000})
     @parks_and_rec = Show.new("Parks and Recreation", "Michael Shur & Greg Daniels", [@leslie_knope, @ron_swanson])
+    @mitch = Character.new({name: "Mitch Buchannon", actor: "David Hasselhoff", salary: 1_200_000})
+    @baywatch = Show.new("Baywatch", "Gregory Bonann", [@mitch])
   end
 
   def test_it_exists_with_attributes
@@ -38,7 +40,7 @@ class NetworkTest < Minitest::Test
     assert_equal "KITT", @nbc.main_characters[0].name
   end
 
-  def test_it_can_return_actors_by_show
+  def test_it_can_sort_actors_by_show
     @nbc.add_show(@knight_rider)
     @nbc.add_show(@parks_and_rec)
 
@@ -47,9 +49,7 @@ class NetworkTest < Minitest::Test
 
     expected = @nbc.actors_by_show.values.any? {|values| values == ["Amy Poehler", "Nick Offerman"]}
 
-    assert expected  
+    assert expected
   end
-
-
 
 end

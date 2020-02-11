@@ -27,4 +27,5 @@ class Network
     @shows.each {|show| by_show[show] = show.actors}
     by_show
   end
+
 end
