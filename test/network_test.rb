@@ -30,4 +30,20 @@ class NetworkTest < Minitest::Test
     assert_equal Show, @nbc.shows[0].class
   end
 
+  def test_it_can_return_main_characters
+    @nbc.add_show(@knight_rider)
+    @nbc.add_show(@parks_and_rec)
+
+    assert_equal Array, @nbc.main_characters.class
+    assert_equal "KITT", @nbc.main_characters[0].name
+  end
+
+  def test_it_can_return_actors_by_show
+    skip
+    assert_equal Hash, @nbc.actors_by_show.class
+    assert_equal Show, @nbc.actors_by_show.keys[0].class
+  end
+
+
+
 end
