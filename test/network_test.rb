@@ -47,9 +47,22 @@ class NetworkTest < Minitest::Test
     assert_equal Hash, @nbc.actors_by_show.class
     assert_equal Show, @nbc.actors_by_show.keys[0].class
 
-    expected = @nbc.actors_by_show.values.any? {|values| values == ["Amy Poehler", "Nick Offerman"]}
+    actual = @nbc.actors_by_show.values.any? {|values| values == ["Amy Poehler", "Nick Offerman"]}
 
-    assert expected
+    assert actual
   end
+
+  def test_it_can_sort_shows_by_actor
+    expected = {
+                "David Hasselhoff" => [@knight_rider, @baywatch],
+                "William Daniels" => [@knight_rider],
+                "Amy Poehler" => [@parks_and_rec],
+                "Nick Offerman" => [@parks_and_rec]
+                }
+
+    assert_equal expected, @nbc.shows_by_actor
+  end
+
+
 
 end

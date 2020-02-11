@@ -28,4 +28,9 @@ class Network
     by_show
   end
 
+  def shows_by_actor
+    
+
+  end
+
 end
