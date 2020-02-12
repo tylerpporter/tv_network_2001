@@ -29,8 +29,17 @@ class Network
   end
 
   def shows_by_actor
-    
-
+    by_actor = {}
+    @shows.each do |show|
+      show.actors.each do |actor|
+        if by_actor[actor].nil?
+          by_actor[actor] = [show]
+        else
+          by_actor[actor] << show
+        end
+      end
+    end
+    by_actor
   end
 
 end
