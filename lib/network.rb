@@ -32,11 +32,7 @@ class Network
     by_actor = {}
     @shows.each do |show|
       show.actors.each do |actor|
-        if by_actor[actor].nil?
-          by_actor[actor] = [show]
-        else
-          by_actor[actor] << show
-        end
+        by_actor[actor].nil? ? by_actor[actor] = [show] : by_actor[actor] << show
       end
     end
     by_actor
