@@ -50,6 +50,7 @@ class NetworkTest < Minitest::Test
     actual = @nbc.actors_by_show.values.any? {|values| values == ["Amy Poehler", "Nick Offerman"]}
 
     assert actual
+
   end
 
   def test_it_can_sort_shows_by_actor
@@ -73,6 +74,7 @@ class NetworkTest < Minitest::Test
     @nbc.add_show(@baywatch)
 
     assert_equal ["David Hasselhoff"], @nbc.prolific_actors
+
   end
 
 end
